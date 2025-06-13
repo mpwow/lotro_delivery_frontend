@@ -1,0 +1,17 @@
+@use "../../styles/variables" as variable;
+@use "../../styles/mixins" as mixin;
+
+.meals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  max-width: 70%;
+  gap: 2rem;
+  margin: 0 auto;
+  list-style: none;
+  padding-bottom: 2rem;
+
+  @include mixin.mobile() {
+    max-width: 100%;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,58 @@
+@use "../../styles/variables" as variable;
+@use "../../styles/mixins" as mixin;
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto 1rem;
+  padding: 0 4rem;
+
+  @include mixin.mobile() {
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+}
+
+.search {
+  width: 100%;
+  min-height: 4rem;
+  border: 1px solid variable.$color-primary-light;
+  border-radius: 2rem;
+  padding: 0 2rem;
+  color: variable.$color-primary-light;
+  font-size: 2rem;
+  background-color: variable.$color-primary-item-background;
+
+  @include mixin.mobile() {
+    min-height: 3rem;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px variable.$color-primary-light;
+    outline: none;
+  }
+}
+
+.searchClose {
+  width: 60px;
+  height: 60px;
+  border: 1px solid variable.$color-primary-light;
+  border-radius: 2rem;
+  color: variable.$color-primary-light;
+  background: transparent;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  @include mixin.mobile() {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

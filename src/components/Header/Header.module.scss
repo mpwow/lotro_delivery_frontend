@@ -1,0 +1,16 @@
+@use "../../styles/variables" as variable;
+@use "../../styles/mixins" as mixin;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 2rem 2rem 1rem 2rem;
+  color: variable.$color-primary;
+  font-family: variable.$font-main;
+
+  @include mixin.mobile() {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,85 @@
+.mealItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: #1d1a16;
+}
+
+.mealImg {
+  width: 100%;
+  height: 20rem;
+  margin-bottom: 40px;
+  border-radius: 1rem;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.mealTitle {
+  min-height: 8rem;
+  margin: 0.75rem 0;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.mealPrice {
+  display: inline-block;
+  margin: 0;
+  border-radius: 4px;
+  padding: 0.5rem 2rem;
+  color: #ffc404;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: #312c1d;
+}
+
+.mealDescription {
+  margin: 2rem 0;
+}
+
+.mealButton {
+  justify-self: end;
+  margin-top: auto;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  padding: 1rem 4rem;
+  color: #1d1a16;
+  font-size: 2rem;
+  background-color: #ffc404;
+  cursor: pointer;
+}
+
+.mealCountContainer {
+  display: flex;
+  justify-self: end;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin-top: auto;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #ffc404;
+  font-size: 2rem;
+  background-color: #312c1d;
+}
+
+.countControl,
+.countText {
+  display: block;
+}
+
+.countControl {
+  width: 60px;
+  cursor: pointer;
+}
+
+.countText {
+  min-width: 30px;
+  text-align: center;
+}

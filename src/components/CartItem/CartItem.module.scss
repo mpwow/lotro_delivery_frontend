@@ -1,0 +1,72 @@
+@use "../../styles/variables" as variable;
+@use "../../styles/mixins" as mixin;
+
+.itemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .itemDelete {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  &:hover {
+    .itemDelete {
+      opacity: 1;
+    }
+  }
+
+}
+
+.itemNameContainer {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 2rem;
+
+  @include mixin.mobile() {
+    font-size: 1rem;
+  }
+}
+
+.itemDelete {
+  color: variable.$color-primary-light;
+  width: 1rem;
+
+  @include mixin.mobile() {
+    font-size: 1rem;
+  }
+}
+
+.mealCountContainer {
+  display: flex;
+  justify-self: end;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #ffc404;
+  font-size: 2rem;
+  background-color: #312c1d;
+
+  @include mixin.mobile() {
+    font-size: 1rem;
+  }
+}
+
+.countControl,
+.countText {
+  display: block;
+}
+
+.countControl {
+  cursor: pointer;
+}
+
+.countText {
+  min-width: 60px;
+  text-align: center;
+}

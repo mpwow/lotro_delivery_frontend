@@ -1,0 +1,41 @@
+@use "../../../../styles/mixins" as mixin;
+@use "../../../../styles/variables" as variable;
+
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: variable.$color-primary;
+  font-size: 2rem;
+  cursor: pointer;
+
+  @include mixin.mobile() {
+    flex: 1 1 33.33%;
+  }
+
+  &:hover {
+    color: variable.$color-primary-light;
+  }
+
+  .buttonIcon {
+    width: 120px; 
+    height: 120px;
+
+    @include mixin.mobile() {
+      width: 60px; 
+      height: 60px;
+    }
+  }
+
+  .buttonText {
+    color: variable.$color-primary;
+    font-size: 1.5rem;
+
+    @include mixin.mobile() {
+      display: none;
+    }
+  }
+
+  
+}

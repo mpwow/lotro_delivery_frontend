@@ -1,0 +1,70 @@
+@use "../../styles/variables" as variable;
+@use "../../styles/mixins" as mixin;
+
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+
+  @include mixin.mobile() {
+    align-items: flex-end;
+    max-height: calc(100vh - 50px);
+  }
+}
+
+.modal {
+  position: relative;
+  background-color: variable.$color-primary-item-background;
+  padding: 2rem;
+  border-radius: 3rem;
+  border: 2px solid variable.$color-primary;
+  font-size: 1.8rem;
+  width: 70%;
+  color: variable.$color-primary;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 90vh;
+
+  @include mixin.mobile() {
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    height: 70vh;
+    max-height: 80vh;
+    font-size: 1.3rem;
+  }
+}
+
+.cartTitle {
+  font-size: 2.5rem;
+  text-align: center;
+
+  @include mixin.mobile() {
+    font-size: 1.8rem;
+  }
+}
+
+.buttonClose {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  border: 1px solid variable.$color-primary;
+  padding: 0 1rem;
+  color: variable.$color-primary;
+  border-radius: 5rem;
+
+  @include mixin.mobile() {
+    font-size: 1.8rem;
+    top: 15px;
+    right: 20px;
+  }
+}

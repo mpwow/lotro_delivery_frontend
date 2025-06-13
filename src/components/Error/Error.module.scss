@@ -1,0 +1,7 @@
+@use "../../styles/variables" as variable;
+
+.error {
+  color: variable.$color-primary;
+  font-family: variable.$font-main;
+  font-size: 2rem
+}
