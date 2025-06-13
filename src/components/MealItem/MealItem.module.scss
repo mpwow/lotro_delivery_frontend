@@ -52,6 +52,11 @@
   font-size: 2rem;
   background-color: #ffc404;
   cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
 
 .mealCountContainer {

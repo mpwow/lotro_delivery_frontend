@@ -8,6 +8,14 @@ export class Meal {
   }
 
   get formattedPrice() {
-    return `${this.price} Silver Pennies`;
+    if (this.isAvailableToOrder) {
+      return `${this.price} Silver Pennies`;
+    } else {
+      return "Out of Stock";
+    }
+  }
+
+  get isAvailableToOrder() {
+    return this.price > 0;
   }
 }

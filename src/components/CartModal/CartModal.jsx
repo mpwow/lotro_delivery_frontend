@@ -31,6 +31,7 @@ export default function CartModal() {
             );
           })
         )}
+        <span className={styles.totalCost}>Total: 100 Silver Pennies</span>
         <CartButtons
           onClear={clearCart}
           onOrder={() => {

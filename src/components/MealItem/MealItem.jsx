@@ -18,7 +18,8 @@ export default function MealItem({ meal }) {
   const addToCartButton = (
     <button
       className={styles.mealButton}
-      onClick={handleAddMealToCart}>
+      onClick={handleAddMealToCart}
+      disabled={!meal.isAvailableToOrder}>
       Add To Cart
     </button>
   );
