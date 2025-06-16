@@ -1,5 +1,5 @@
-import { fetchMeals } from "../api/api";
 import { Meal } from "../domain/Meal";
+import { fetchMeals } from "../api/api";
 
 export async function getMeals() {
   try {

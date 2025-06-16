@@ -6,6 +6,8 @@ import SearchMeals from "./components/SearchMeals/SearchMeals";
 import { SearchProvider } from "./context/SearchContext";
 import CartModal from "./components/CartModal/CartModal";
 import { getMeals } from "./application/mealsService";
+import OrderModal from "./components/OrderModal/OrderModal";
+import SuccessOrderScreen from "./components/SuccessOrderScreen/SuccessOrderScreen";
 
 function App() {
   const [meals, setMeals] = useState([]);
@@ -31,6 +33,8 @@ function App() {
   return (
     <SearchProvider>
       <Header />
+      <SuccessOrderScreen />
+      <OrderModal />
       <CartModal />
       <SearchMeals />
       <MealsList

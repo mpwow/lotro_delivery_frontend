@@ -4,10 +4,22 @@ import CartItem from "../CartItem/CartItem";
 import CartButtons from "../CartButtons/CartButtons";
 
 export default function CartModal() {
-  const { cartIsOpened, closeCart, cartItems, clearCart, addToCart, removeFromCart, removeCurrentItemFromCart } = useCart();
+  const {
+    cartIsOpened,
+    closeCart,
+    cartItems,
+    clearCart,
+    addToCart,
+    removeFromCart,
+    removeCurrentItemFromCart,
+    orderIsOpened,
+    closeOrderDetailsModal,
+    openOrderDetailsModal,
+    cartTotalCost,
+  } = useCart();
 
   if (!cartIsOpened) return null;
-
+  const currentTotalCost = cartTotalCost();
   return (
     <div
       className={styles.backdrop}
@@ -31,12 +43,14 @@ export default function CartModal() {
             );
           })
         )}
-        <span className={styles.totalCost}>Total: 100 Silver Pennies</span>
+        <span className={styles.totalCost}>Total: {currentTotalCost} Silver Pennies</span>
         <CartButtons
           onClear={clearCart}
           onOrder={() => {
-            console.log("There will be order modal soon...");
+            openOrderDetailsModal();
+            closeCart();
           }}
+          isDisabled={currentTotalCost === 0}
         />
         <button
           onClick={closeCart}

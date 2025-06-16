@@ -34,7 +34,7 @@ export default function ControlSection() {
       />
       <ControlButton
         Icon={ProfileIcon}
-        text={"Profile"}
+        text={"Login"}
         onClick={() => {
           console.log("Clicked Profile");
         }}

@@ -1,6 +1,8 @@
 import { createContext, useContext, useState } from "react";
 import { CartItem } from "../domain/CartItem";
 
+// TO DO - переименовать в Checkout context
+
 const CartContext = createContext();
 
 export function useCart() {
@@ -10,6 +12,12 @@ export function useCart() {
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [cartIsOpened, setCartIsOpened] = useState(false);
+
+  // Стейты для order details модалки
+  const [orderIsOpened, setOrderIsOpened] = useState(false);
+
+  // Стейты для order results модалки
+  const [resultModalIsOpened, setResultModalIsOpened] = useState(false);
 
   const addToCart = (meal) => {
     setCartItems((prevCartState) => {
@@ -48,8 +56,15 @@ export function CartProvider({ children }) {
     });
   };
   const cartCount = () => cartItems.reduce((acc, currentItem) => acc + currentItem.quantity, 0);
+  const cartTotalCost = () => cartItems.reduce((acc, currentItem) => acc + currentItem.meal.price * currentItem.quantity, 0);
   const openCart = () => setCartIsOpened(true);
   const closeCart = () => setCartIsOpened(false);
+
+  const openOrderDetailsModal = () => setOrderIsOpened(true);
+  const closeOrderDetailsModal = () => setOrderIsOpened(false);
+
+  const openResultModal = () => setResultModalIsOpened(true);
+  const closeResultModal = () => setResultModalIsOpened(false);
 
   const value = {
     cartItems,
@@ -57,10 +72,17 @@ export function CartProvider({ children }) {
     removeFromCart,
     clearCart,
     cartCount,
+    cartTotalCost,
     openCart,
     closeCart,
     cartIsOpened,
     removeCurrentItemFromCart,
+    orderIsOpened,
+    openOrderDetailsModal,
+    closeOrderDetailsModal,
+    resultModalIsOpened,
+    openResultModal,
+    closeResultModal,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
